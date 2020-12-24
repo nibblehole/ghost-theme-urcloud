@@ -10,9 +10,6 @@ var beeper = require('beeper');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-mod-function');
-var cssnano = require('cssnano');
-var easyimport = require('postcss-easy-import');
 
 function serve(done) {
     livereload.listen();
@@ -37,10 +34,7 @@ function hbs(done) {
 
 function css(done) {
     var processors = [
-        easyimport,
-        colorFunction(),
         autoprefixer(),
-        cssnano()
     ];
 
     pump([
