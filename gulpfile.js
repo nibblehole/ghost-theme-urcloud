@@ -5,7 +5,6 @@ const pump = require('pump');
 var livereload = require('gulp-livereload');
 var postcss = require('gulp-postcss');
 var zip = require('gulp-zip');
-var uglify = require('gulp-uglify');
 var beeper = require('beeper');
 
 // postcss plugins
@@ -35,32 +34,38 @@ function hbs(done) {
 
 function css(done) {
     var processors = [
-        tailwindcss(),
         autoprefixer(),
     ];
 
     pump([
         src('assets/css/*.css', {sourcemaps: true}),
         postcss(processors),
-        dest('assets/built/', {sourcemaps: '.'}),
+        dest('assets/build/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
 }
 
-function js(done) {
+
+
+function compileTailwindcss(done){
+  var processors = [
+        tailwindcss(),
+        autoprefixer(),
+    ];
     pump([
-        src('assets/js/*.js', {sourcemaps: true}),
-        uglify(),
-        dest('assets/built/', {sourcemaps: '.'}),
+        src('assets/css/tailwindcss.css', {sourcemaps: true}),
+        postcss(processors),
+        dest('assets/build/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
 }
+
+
 
 function zipper(done) {
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
-
     pump([
         src([
             '**',
@@ -72,10 +77,11 @@ function zipper(done) {
     ], handleError(done));
 }
 
-const cssWatcher = () => watch('assets/css/**', css);
+const tailwindcssWatcher = () => watch('assets/css/tailwindcss.css',compileTailwindcss);
+const cssWatcher = () => watch(['assets/css/**/*.css', '!assets/css/tailwindcss.css'],css);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
-const watcher = parallel(cssWatcher, hbsWatcher);
-const build = series(css, js);
+const watcher = parallel(tailwindcssWatcher,cssWatcher, hbsWatcher);
+const build = series(compileTailwindcss,css);
 const dev = series(build, serve, watcher);
 
 exports.build = build;
