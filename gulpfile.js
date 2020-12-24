@@ -7,9 +7,6 @@ var postcss = require('gulp-postcss');
 var zip = require('gulp-zip');
 var beeper = require('beeper');
 
-// postcss plugins
-var autoprefixer = require('autoprefixer');
-var tailwindcss =   require('tailwindcss');
 
 function serve(done) {
     livereload.listen();
@@ -48,10 +45,10 @@ function css(done) {
 
 
 
-function compileTailwindcss(done){
+function tailwindcss(done){
   var processors = [
-        tailwindcss(),
-        autoprefixer(),
+        require('tailwindcss'),
+        require('autoprefixer')
     ];
     pump([
         src('assets/css/tailwindcss.css', {sourcemaps: true}),
@@ -78,11 +75,11 @@ function zipper(done) {
     ], handleError(done));
 }
 
-const tailwindcssWatcher = () => watch('assets/css/tailwindcss.css',compileTailwindcss);
+const tailwindcssWatcher = () => watch('assets/css/tailwindcss.css',tailwindcss);
 const cssWatcher = () => watch(['assets/css/**/*.css', '!assets/css/tailwindcss.css'],css);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
 const watcher = parallel(tailwindcssWatcher,cssWatcher, hbsWatcher);
-const build = series(compileTailwindcss,css);
+const build = series(tailwindcss,css);
 const dev = series(build, serve, watcher);
 
 exports.build = build;
