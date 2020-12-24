@@ -49,12 +49,14 @@
         "gscan": "3.5.4",
         "gulp": "4.0.2",
         "gulp-livereload": "4.0.2",
-        "gulp-postcss": "8.0.0",
+        "gulp-postcss": "^9.0.0",
         "gulp-sourcemaps": "2.6.5",
         "gulp-uglify": "3.0.2",
         "gulp-util": "3.0.8",
         "gulp-watch": "5.0.1",
-        "gulp-zip": "5.0.2"
+        "gulp-zip": "5.0.2",
+        "postcss": "^8.2.1",
+        "postcss-import": "^14.0.0"
     },
     "browserslist": [
         "defaults"
@@ -81,5 +83,8 @@
                 "width": 2000
             }
         }
+    },
+    "dependencies": {
+        "tailwindcss": "^2.0.2"
     }
 }

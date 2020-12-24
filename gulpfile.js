@@ -10,6 +10,7 @@ var beeper = require('beeper');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
+var tailwindcss =   require('tailwindcss'),
 
 function serve(done) {
     livereload.listen();
@@ -34,6 +35,7 @@ function hbs(done) {
 
 function css(done) {
     var processors = [
+        tailwindcss(),
         autoprefixer(),
     ];
 
