@@ -1,1 +1,1 @@
-{"version":3,"sources":["common.css"],"names":[],"mappings":"AAAA;IACI,eAAe;AACnB","file":"common.css","sourcesContent":["body {\n    font-size: 20px;\n}\n"]}
+{"version":3,"sources":["common.css"],"names":[],"mappings":"AAMA;IACI,YAAY;AAChB;AAEA;IACI,sBAAsB;AAC1B","file":"common.css","sourcesContent":[":root {\n    --justify-between: {\n        display: flex;\n        justify-content: space-between;\n    }\n}\n.site-header {\n    height: 60px;\n}\n\n.nav {\n    @apply justify-between;\n}\n"]}

@@ -59,8 +59,11 @@
     </header> --}}
 
     <header class="site-header">
-        <div class="container mx-auto">
-            ss
+        <div class="container mx-auto flex  justify-between">
+            <a href="{{@site.url}}" class="logo">{{@site.title}}</a>
+            <div class="menu flex justify-center">
+                {{navigation}}
+            </div>
         </div>
     </header>
 
@@ -85,13 +88,13 @@
 
     {{!-- <foot> --}}
 
-    <script src="{{asset " built/jquery-3.4.1.min.js"}}"></script>
+    <script src="{{asset "libs/jquery-3.4.1.min.js"}}"></script>
 
     {{#if pagination.pages}}
     <script>
         var maxPages = parseInt('{{pagination.pages}}');
     </script>
-    <script src="{{asset " built/infinitescroll.js"}}"></script>
+    <script src="{{asset "libs/infinitescroll.js"}}"></script>
     {{/if}}
 
     <script>
@@ -104,7 +107,7 @@
     </script>
 
     {{#is "post, page"}}
-    <script src="{{asset " built/jquery.fitvids.js"}}"></script>
+    <script src="{{asset "libs/jquery.fitvids.js"}}"></script>
     <script>
         var images = document.querySelectorAll('.kg-gallery-image img');
         images.forEach(function (image) {

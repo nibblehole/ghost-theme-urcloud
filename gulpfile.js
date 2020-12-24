@@ -36,7 +36,7 @@ function css(done) {
     ];
 
     pump([
-        src('assets/css/*.css', {sourcemaps: true}),
+        src(['assets/css/**/*.css', '!assets/css/tailwindcss.css'], {sourcemaps: true}),
         postcss(processors),
         dest('assets/build/', {sourcemaps: '.'}),
         livereload()
@@ -47,13 +47,13 @@ function css(done) {
 
 function tailwindcss(done){
   var processors = [
-        require('tailwindcss'),
-        require('autoprefixer')
+        require('tailwindcss', {sourcemaps: true}),
+        require('autoprefixer', {sourcemaps: '.'})
     ];
     pump([
-        src('assets/css/tailwindcss.css', {sourcemaps: true}),
+        src('assets/css/tailwindcss.css'),
         postcss(processors),
-        dest('assets/build/', {sourcemaps: '.'}),
+        dest('assets/build/'),
         livereload()
     ], handleError(done));
 }
