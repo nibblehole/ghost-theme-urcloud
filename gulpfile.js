@@ -10,7 +10,7 @@ var beeper = require('beeper');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
-var tailwindcss =   require('tailwindcss'),
+var tailwindcss =   require('tailwindcss');
 
 function serve(done) {
     livereload.listen();
