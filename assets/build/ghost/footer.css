@@ -2,15 +2,9 @@
 /* ---------------------------------------------------------- */
 
 .gh-foot {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     padding: 8vmin 4vmin;
 }
 
@@ -23,31 +17,17 @@
 }
 
 .gh-foot-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .gh-foot-menu .nav {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     list-style: none;
-    font-size: 28.8px;
     font-size: 1.8rem;
 }
 
@@ -60,14 +40,11 @@
     display: inline-block;
     padding: 3px 0;
     text-decoration: none;
-    -webkit-box-shadow: 0 -1px 0 0 currentcolor inset;
-            box-shadow: 0 -1px 0 0 currentcolor inset;
+    box-shadow: 0 -1px 0 0 currentcolor inset;
 }
 
 .gh-foot-meta {
-    margin: 32px 0;
     margin: 2rem 0;
-    font-size: 24px;
     font-size: 1.5rem;
     text-align: center;
     opacity: 0.5;

@@ -7,7 +7,6 @@ var postcss = require('gulp-postcss');
 var zip = require('gulp-zip');
 var beeper = require('beeper');
 
-
 function serve(done) {
     livereload.listen();
     done();
@@ -29,14 +28,15 @@ function hbs(done) {
     ], handleError(done));
 }
 
-function css(done) {
+function less(done) {
     var processors = [
-        require('postcss-import'),
-        require('postcss-cssnext')
+        require('autoprefixer')
     ];
-
     pump([
-        src(['assets/css/**/*.css', '!assets/css/tailwindcss.css'], {sourcemaps: true}),
+        src(['assets/less/**/*.less'], {sourcemaps: true}),
+        require('gulp-less')({
+            paths:['assets/less']
+        }),
         postcss(processors),
         dest('assets/build/', {sourcemaps: '.'}),
         livereload()
@@ -47,11 +47,11 @@ function css(done) {
 
 function tailwindcss(done){
   var processors = [
-        require('tailwindcss', {sourcemaps: true}),
-        require('autoprefixer', {sourcemaps: '.'})
+        require('tailwindcss'),
+        require('autoprefixer')
     ];
     pump([
-        src('assets/css/tailwindcss.css'),
+        src('assets/tailwindcss.css'),
         postcss(processors),
         dest('assets/build/'),
         livereload()
@@ -75,11 +75,11 @@ function zipper(done) {
     ], handleError(done));
 }
 
-const tailwindcssWatcher = () => watch('assets/css/tailwindcss.css',tailwindcss);
-const cssWatcher = () => watch(['assets/css/**/*.css', '!assets/css/tailwindcss.css'],css);
+const tailwindcssWatcher = () => watch('assets/tailwindcss.css',tailwindcss);
+const lessWatcher = () => watch('assets/less/**/*.less',less);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
-const watcher = parallel(tailwindcssWatcher,cssWatcher, hbsWatcher);
-const build = series(tailwindcss,css);
+const watcher = parallel(tailwindcssWatcher,lessWatcher, hbsWatcher);
+const build = series(tailwindcss,less);
 const dev = series(build, serve, watcher);
 
 exports.build = build;

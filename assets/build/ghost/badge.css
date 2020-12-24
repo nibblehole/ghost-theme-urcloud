@@ -1,11 +1,7 @@
 a.gh-powered,
 a.gh-powered:hover {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     padding: 6px 9px 6px 6px;
     border: none;
     font-size: 12px;
@@ -17,8 +13,7 @@ a.gh-powered:hover {
     color: #383838;
     background: #fff;
     border-radius: 5px;
-    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .08);
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .08);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.08);
     cursor: pointer;
 }
 

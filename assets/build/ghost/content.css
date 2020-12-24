@@ -36,6 +36,7 @@
     width: 100%;
 }
 
+
 /* Content & Typography
 /* ---------------------------------------------------------- */
 
@@ -48,7 +49,6 @@
 }
 
 .gh-content > [id] + * {
-    margin-top: 24px;
     margin-top: 1.5rem;
 }
 
@@ -64,7 +64,6 @@
 .gh-canvas > p {
     font-family: var(--font-serif);
     font-weight: 400;
-    font-size: 32px;
     font-size: 2rem;
     line-height: 1.6em;
 }
@@ -94,7 +93,6 @@
     left: -1.5em;
     top: 0;
     bottom: 0;
-    width: 4.8px;
     width: 0.3rem;
     background: var(--color-primary);
 }
@@ -113,6 +111,7 @@
     }
 }
 
+
 /* Cards
 /* ---------------------------------------------------------- */
 
@@ -125,18 +124,16 @@
 }
 
 .kg-card figcaption {
-    padding: 24px 24px 0;
     padding: 1.5rem 1.5rem 0;
     text-align: center;
-    color: rgba(0, 0, 0, .5);
+    color: rgba(0,0,0,0.5);
     font-weight: 600;
-    font-size: 20.8px;
     font-size: 1.3rem;
     line-height: 1.4em;
 }
 
 .kg-card figcaption strong {
-    color: rgba(0, 0, 0, .8);
+    color: rgba(0,0,0,0.8);
 }
 
 .gh-canvas :not(pre) code {
@@ -154,29 +151,22 @@
 .gh-canvas > pre {
     overflow: scroll;
     padding: 16px 20px;
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255,255,255,0.8);
     border-radius: 5px;
-    -webkit-box-shadow: 0 2px 6px -2px rgba(0, 0, 0, .1), 0 0 1px rgba(0, 0, 0, .4);
-            box-shadow: 0 2px 6px -2px rgba(0, 0, 0, .1), 0 0 1px rgba(0, 0, 0, .4);
+    box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
 }
 
 .kg-embed-card {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 
 .kg-image-card img {
     margin: auto;
 }
+
 
 /* Galleries
 /* ---------------------------------------------------------- */
@@ -190,16 +180,9 @@
 }
 
 .kg-gallery-row {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .kg-gallery-image img {
@@ -217,6 +200,7 @@
     margin: 0 0 0 0.75em;
 }
 
+
 /* Bookmark Cards
 /* ---------------------------------------------------------- */
 
@@ -227,40 +211,27 @@
 
 .kg-bookmark-container,
 .kg-bookmark-container:hover {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
     color: currentColor;
-    background: rgba(255, 255, 255, .6);
+    background: rgba(255,255,255,0.6);
     font-family: var(--font-sans-serif);
     text-decoration: none;
     border-radius: 5px;
-    -webkit-box-shadow: 0 2px 6px -2px rgba(0, 0, 0, .1), 0 0 1px rgba(0, 0, 0, .4);
-            box-shadow: 0 2px 6px -2px rgba(0, 0, 0, .1), 0 0 1px rgba(0, 0, 0, .4);
+    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4);
     overflow: hidden;
 }
 
 .kg-bookmark-content {
-    -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-    -webkit-box-flex: 999;
-        -ms-flex-positive: 999;
-            flex-grow: 999;
+    flex-basis: 0;
+    flex-grow: 999;
     padding: 20px;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+    order: 1;
 }
 
 .kg-bookmark-title {
     font-weight: 600;
-    font-size: 24px;
     font-size: 1.5rem;
     line-height: 1.3em;
 }
@@ -269,7 +240,6 @@
     display: -webkit-box;
     max-height: 45px;
     margin: 0.5em 0 0 0;
-    font-size: 22.4px;
     font-size: 1.4rem;
     line-height: 1.55em;
     overflow: hidden;
@@ -283,14 +253,9 @@
 }
 
 .kg-bookmark-metadata {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     font-weight: 500;
-    font-size: 20.8px;
     font-size: 1.3rem;
     line-height: 1.3em;
     white-space: nowrap;
@@ -312,19 +277,10 @@
 }
 
 .kg-bookmark-thumbnail {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-preferred-size: 384px;
-        flex-basis: 384px;
-    -ms-flex-preferred-size: 24rem;
-        flex-basis: 24rem;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    flex-basis: 24rem;
+    flex-grow: 1;
+    justify-content: flex-end;
 }
 
 .kg-bookmark-thumbnail img {
@@ -346,6 +302,7 @@
     margin: 0 .5em;
 }
 
+
 /* Card captions
 /* ---------------------------------------------------------- */
 
@@ -357,7 +314,6 @@
 .kg-width-wide.kg-card-hascaption img {
     grid-column: wide-start / wide-end;
 }
-
 .kg-width-full.kg-card-hascaption img {
     grid-column: 1 / -1;
 }
@@ -365,6 +321,7 @@
 .kg-width-full.kg-card-hascaption figcaption {
     grid-column: main-start / main-end;
 }
+
 
 /* Tables
 /* ---------------------------------------------------------- */
@@ -386,25 +343,21 @@
 }
 
 .gh-content tbody tr:nth-child(2n + 1) {
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgba(0,0,0,0.1);
     padding: 1px;
 }
 
 .gh-content tbody tr:nth-child(2n + 2) td:last-child {
-    -webkit-box-shadow:
-        inset 1px 0 rgba(0, 0, 0, .1),
-        inset -1px 0 rgba(0, 0, 0, .1);
-            box-shadow:
-        inset 1px 0 rgba(0, 0, 0, .1),
-        inset -1px 0 rgba(0, 0, 0, .1);
+    box-shadow:
+        inset 1px 0 rgba(0,0,0,0.1),
+        inset -1px 0 rgba(0,0,0,0.1);
 }
 
 .gh-content tbody tr:nth-child(2n + 2) td {
-    -webkit-box-shadow: inset 1px 0 rgba(0, 0, 0, .1);
-            box-shadow: inset 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: inset 1px 0 rgba(0,0,0,0.1);
 }
 
 .gh-content tbody tr:last-child {
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
 }
 /*# sourceMappingURL=content.css.map */
