@@ -34,7 +34,8 @@ function hbs(done) {
 
 function css(done) {
     var processors = [
-        autoprefixer(),
+        require('postcss-import'),
+        require('postcss-cssnext')
     ];
 
     pump([
