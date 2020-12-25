@@ -233,3 +233,47 @@ body {
 .gh-card-meta {
   color: #666;
 }
+.gh-tools-main {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.gh-tools-section {
+  background: #fff;
+  padding: 15px 5px 10px 5px;
+}
+.gh-tools-section .head {
+  font-size: 18px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+.gh-tools-section .item-box {
+  padding: 5px 5px;
+}
+.gh-tools-section .item {
+  display: block;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 1px solid #e4ecf3;
+  -webkit-box-shadow: 1px 2px 3px #f2f6f8;
+          box-shadow: 1px 2px 3px #f2f6f8;
+}
+.gh-tools-section .item .title {
+  font-size: 14px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gh-tools-section .item .desc {
+  color: gray;
+  font-size: 12px;
+  height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
