@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{asset "assets/css/tailwindcss.min.css" }}" />
     <link rel="stylesheet" type="text/css" href="{{asset "assets/css/common.css" }}" />
-    <script src="//at.alicdn.com/t/font_2282343_49aydd8yk6n.js"></script>
+    <script src="//at.alicdn.com/t/font_2282343_x0wb6gpk53q.js"></script>
     <title>{{meta_title}}</title>
 
     {{ghost_head}}
@@ -19,44 +19,6 @@
 </head>
 
 <body class="{{body_class}}">
-
-    {{!-- <header id="gh-head" class="gh-head">
-        <nav class="gh-head-inner gh-container">
-
-            <div class="gh-head-brand">
-                <a class="gh-head-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                    {{else}}
-                    {{@site.title}}
-                    {{/if}}
-                </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
-                    </div>
-                </a>
-            </div>
-            <div class="gh-head-menu">
-                {{navigation}}
-            </div>
-            <div class="gh-head-actions">
-                <div class="gh-head-actions-list">
-                    {{#if @site.facebook}}
-                    <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{>
-                        "icons/facebook"}}</a>
-                    {{/if}}
-                    {{#if @site.twitter}}
-                    <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{>
-                        "icons/twitter"}}</a>
-                    {{/if}}
-                    <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank"
-                        rel="noopener">{{> "icons/rss"}}</a>
-                </div>
-            </div>
-        </nav>
-    </header> --}}
-
     <header class="site-header">
         <div class="container mx-auto">
             <div class="flex justify-between">
@@ -73,21 +35,19 @@
         </div>
     </header>
 
-    <main class="gh-main">
+    <main class="site-main">
 
         {{{body}}}
         {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
 
     </main>
 
-    <footer class="gh-foot">
-        <div class="gh-container">
-            <div class="gh-foot-menu">
-                {{navigation}}
-            </div>
-            <div class="gh-foot-meta">
-                Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-            </div>
+    <footer class="site-footer">
+        <div class="container mx-auto">
+            <span>© 2020 <a href="{{@site.url}}">{{@site.title}}</a></span>
+            <a style="margin-left:10px" rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">
+                皖ICP备20000149号-1
+            </a>
         </div>
     </footer>
 
