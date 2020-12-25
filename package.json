@@ -1,7 +1,6 @@
 {
     "name": "ghost-theme-urcloud",
     "description": "A custom theme for ghost",
-    "demo": "https://starter.ghost.io",
     "version": "1.0.0",
     "engines": {
         "ghost": ">=3.0.0",
@@ -39,7 +38,6 @@
         "url": "https://github.com/TryGhost/Starter.git"
     },
     "bugs": "https://github.com/TryGhost/Starter/issues",
-    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
     "devDependencies": {
         "autoprefixer": "9.8.3",
         "cssnano": "4.1.10",
@@ -81,8 +79,5 @@
                 "width": 2000
             }
         }
-    },
-    "dependencies": {
-        "tailwindcss": "^2.0.2"
     }
 }
