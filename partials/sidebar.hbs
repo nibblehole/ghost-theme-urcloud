@@ -10,13 +10,29 @@
     <div class="gh-sidebar-section">
         <div class="section-head">标签云</div>
         <div class="section-content">
-
+            {{#get 'tags' limit='all' include='count.posts'}}
+            {{#foreach tags}}
+            <a href="{{url}}" class="m-tag-card__link" aria-label="{{name}}">
+                {{name}}
+            </a>
+            {{/foreach}}
+            {{/get}}
         </div>
     </div>
     <div class="gh-sidebar-section">
-        <div class="section-head">热门文章</div>
+        <div class="section-head">精选文章</div>
         <div class="section-content">
-
+            {{#get "posts" filter="featured:true"  limit="5" as |featured|}}
+            {{#if featured}}
+            {{#foreach featured}}
+            <a href="{{url}}" class="m-featured-article__content">
+                <h2 class="m-featured-article__title" title="{{title}}">
+                    {{title}}
+                </h2>
+            </a>
+            {{/foreach}}
+            {{/if}}
+            {{/get}}
         </div>
     </div>
     <div class="gh-sidebar-section">
@@ -28,7 +44,8 @@
     <div class="gh-sidebar-section">
         <div class="section-head">实验室</div>
         <div class="section-content">
-
+            <a href="https://sz.urcloud.co/" target="_blank" class="friends-link">印象苏城</a>
+            <a href="https://photo.urcloud.co/" target="_blank" class="friends-link">相册管理系统</a>
         </div>
     </div>
 </aside>

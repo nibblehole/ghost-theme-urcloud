@@ -178,6 +178,33 @@ body {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
+.gh-sidebar-section .m-tag-card__link {
+  display: inline-block;
+  margin: 0 6px 5px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background: #f5f5f5;
+  height: 22px;
+  line-height: 22px;
+  color: #666;
+  padding: 0 5px;
+  border: 1px solid #e8e9e7;
+  font-size: 12px;
+}
+.gh-sidebar-section .m-featured-article__title {
+  color: #666;
+}
+.gh-sidebar-section .friends-link {
+  display: inline-block;
+  width: 45%;
+  margin: 0 6px 5px 0;
+  font-size: 12px;
+  color: #666;
+  padding: 2px 0;
+  text-align: center;
+  border-bottom: solid 1px #e8e9e7;
+}
 .gh-card {
   background: #fff;
   padding: 15px;
@@ -201,5 +228,8 @@ body {
   background-color: #eee;
   padding: 4px 8px;
   font-size: 12px;
+  color: #666;
+}
+.gh-card-meta {
   color: #666;
 }
