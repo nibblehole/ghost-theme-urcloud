@@ -6,10 +6,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{asset "build/tailwindcss.css" }}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "build/common.css" }}" />
-
-
+    <link rel="stylesheet" type="text/css" href="{{asset "assets/css/tailwindcss.min.css" }}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "assets/css/common.css" }}" />
+    <script src="//at.alicdn.com/t/font_2282343_49aydd8yk6n.js"></script>
     <title>{{meta_title}}</title>
 
     {{ghost_head}}
@@ -59,10 +58,17 @@
     </header> --}}
 
     <header class="site-header">
-        <div class="container mx-auto flex  justify-between">
-            <a href="{{@site.url}}" class="logo">{{@site.title}}</a>
-            <div class="menu flex justify-center">
-                {{navigation}}
+        <div class="container mx-auto">
+            <div class="flex justify-between">
+                <a href="{{@site.url}}" class="logo">{{@site.title}}</a>
+                <div class="btn-menu items-center flex lg:hidden">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-menu"></use>
+                    </svg>
+                </div>
+                <div class="menu hidden lg:flex  justify-center">
+                    {{navigation}}
+                </div>
             </div>
         </div>
     </header>
@@ -89,6 +95,8 @@
     {{!-- <foot> --}}
 
     <script src="{{asset "libs/jquery-3.4.1.min.js"}}"></script>
+    <script src="{{asset "js/common.js"}}"></script>
+
 
     {{#if pagination.pages}}
     <script>
